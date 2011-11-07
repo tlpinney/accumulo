@@ -31,11 +31,12 @@
 \contentsline {section}{\numberline {5.4}Iterators}{18}
 \contentsline {subsection}{\numberline {5.4.1}Setting Iterators via the Shell}{19}
 \contentsline {subsection}{\numberline {5.4.2}Setting Iterators Programmatically}{19}
-\contentsline {section}{\numberline {5.5}Versioning Iterators and Timestamps}{19}
-\contentsline {subsection}{\numberline {5.5.1}Logical Time}{20}
-\contentsline {subsection}{\numberline {5.5.2}Deletes}{20}
-\contentsline {section}{\numberline {5.6}Filtering Iterators}{20}
-\contentsline {section}{\numberline {5.7}Aggregating Iterators}{22}
+\contentsline {subsection}{\numberline {5.4.3}Versioning Iterators and Timestamps}{19}
+\contentsline {subsubsection}{Logical Time}{20}
+\contentsline {subsubsection}{Deletes}{20}
+\contentsline {subsection}{\numberline {5.4.4}Filtering Iterators}{20}
+\contentsline {section}{\numberline {5.5}Aggregating Iterators}{22}
+\contentsline {section}{\numberline {5.6}Block Cache}{23}
 \contentsline {chapter}{\numberline {6}Table Design}{24}
 \contentsline {section}{\numberline {6.1}Basic Table}{24}
 \contentsline {section}{\numberline {6.2}RowID Design}{25}
