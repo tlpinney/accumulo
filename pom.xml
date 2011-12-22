@@ -34,6 +34,21 @@
   </modules>
 
   <build>
+    <resources>
+      <resource>
+        <directory>${basedir}/../../</directory>
+        <targetPath>META-INF</targetPath>
+	<includes>
+	  <include>CHANGES</include>
+	  <include>LICENSE</include>
+	  <include>DISCLAIMER</include>
+	  <include>NOTICE</include>
+	</includes>
+      </resource>
+      <resource>
+        <directory>${basedir}/src/main/resources</directory>
+      </resource>
+    </resources>
     <defaultGoal>package</defaultGoal>
     <plugins>
       <plugin>
@@ -98,7 +113,6 @@
               <outputDirectory>../../lib</outputDirectory>
               <!-- just grab the non-provided runtime dependencies -->
               <includeArtifactIds>commons-collections,commons-configuration,commons-io,commons-lang,jline,log4j,libthrift,commons-jci-core,commons-jci-fam,commons-logging,commons-logging-api</includeArtifactIds>
-              <excludeGroupIds>org.apache.accumulo</excludeGroupIds>
               <excludeTransitive>true</excludeTransitive>
             </configuration>
           </execution>
@@ -123,6 +137,7 @@
             <include>web/**</include>
             <include>randomwalk/**</include>
             <include>*.*</include>
+	    <include>**/META-INF/*</include>
           </includes>
         </configuration>
       </plugin>
@@ -529,11 +544,9 @@
         <version>3.2</version>
       </dependency>
       <dependency>
-        <groupId>org.apache.thrift</groupId>
+        <groupId>org.apache.accumulo.thrift</groupId>
         <artifactId>libthrift</artifactId>
         <version>0.3</version>
-        <scope>system</scope>
-        <systemPath>${basedir}/${project.parent.relativePath}/contrib/libthrift-0.3.jar</systemPath>
       </dependency>
       <dependency>
         <groupId>jline</groupId>
@@ -590,6 +603,13 @@
       <artifactId>junit</artifactId>
     </dependency>
   </dependencies>
+
+  <repositories>
+    <repository>
+      <id>legacy-releases</id>
+      <url>http://incubator.apache.org/accumulo/mvn_repo</url>
+    </repository>
+  </repositories>
 
   <distributionManagement>
     <repository>

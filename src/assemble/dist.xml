@@ -25,14 +25,15 @@
     <fileSet>
       <directory>bin</directory>
       <fileMode>0755</fileMode>
+      <directoryMode>0755</directoryMode>
     </fileSet>
     <fileSet>
       <directory>logs</directory>
-      <fileMode>0700</fileMode>
+      <directoryMode>0700</directoryMode>
     </fileSet>
     <fileSet>
       <directory>walogs</directory>
-      <fileMode>0700</fileMode>
+      <directoryMode>0700</directoryMode>
     </fileSet>
     <fileSet>
       <includes>
@@ -77,7 +78,10 @@
         <exclude>**/ingesters.txt</exclude>
         <exclude>**/continuous-env.sh</exclude>
         <exclude>**/*.pyc</exclude>
+        <exclude>src/**/*.so</exclude>
       </excludes>
+      <fileMode>0644</fileMode>
+      <directoryMode>0755</directoryMode>
     </fileSet>
   </fileSets>
 </assembly>

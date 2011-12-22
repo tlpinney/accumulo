@@ -20,7 +20,9 @@ bin=`dirname "$0"`
 bin=`cd "$bin"; pwd`
 cd $bin
 
-test -x /usr/bin/pdflatex || exit 0
+if [ `which pdflatex | wc -l` -eq 0 ]; then
+  exit 0;
+fi
 
 if [ -f ../../accumulo_user_manual.pdf ]
 then
@@ -36,6 +38,6 @@ pdflatex accumulo_user_manual.tex
 pdflatex accumulo_user_manual.tex 
 pdflatex accumulo_user_manual.tex && (
 find . -name '*.aux' -print | xargs rm -f 
-rm -f *.log
+rm -f *.log *.toc *.out
 mv accumulo_user_manual.pdf ../..
 )
